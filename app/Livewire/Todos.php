@@ -7,11 +7,14 @@ use Livewire\Component;
 class Todos extends Component
 {
     public $todo = '';
-    public $todos = [
-        'Buy groceries',
-        'Finish Laravel course',
-        'Learn Vue.js',
-    ];
+    public $todos = [];
+
+    public function mount()
+    {
+        $this->todos = ['Buy groceries', 'Finish Laravel course', 'Learn Vue.js'];
+        // $this->todos = Todo::all(); if we are getting data from a database
+
+    }
 
     public function add()
     {
