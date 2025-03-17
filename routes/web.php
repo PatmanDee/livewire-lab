@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
 use App\Livewire\Counter;
 use App\Livewire\Todos;
-
+use App\Livewire\ShowPosts;
 Route::get('/', Todos::class)->name('todos');
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
@@ -22,5 +22,6 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/counter', Counter::class)->name('counter');
+Route::get('/posts', ShowPosts::class)->name('posts');
 
 require __DIR__.'/auth.php';
